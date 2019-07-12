@@ -120,7 +120,6 @@ class MainActivity : AppCompatActivity() {
             val main = savedInstanceState.getCharSequence("main")
             val description = savedInstanceState.getCharSequence("description")
             showDialog(main!!.toString(), description!!.toString(), mUrl)
-
         }
     }
 
