@@ -252,7 +252,6 @@ class MainActivity : AppCompatActivity() {
             .into(imageView)
 
         mDialog.show()
-
     }
 
     private fun log(message: String) {
