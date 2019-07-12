@@ -13,9 +13,7 @@ open class WeatherDatabaseObject : RealmObject() {
     var main: String = ""
     var icon: String = ""
 
-
     fun getUrl() : String {
         return "http://openweathermap.org/img/wn/" + icon + "@2x.png"
     }
-
 }

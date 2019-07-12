@@ -1,7 +1,6 @@
 package com.example.freshbloodforramaxxkotlin
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import java.sql.Date
-import java.sql.Timestamp
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 
@@ -32,23 +28,18 @@ class MyAdapter(val weatherList: List<WeatherDatabaseObject>, val context: Conte
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val weather: WeatherDatabaseObject = weatherList[p1]
 
-
-
-
-        val date1 = Date(weather.dt * 1000L)
-        val locale: Locale = Locale("ru","RU")
+        val date = Date(weather.dt * 1000L)
+        val locale = Locale("ru","RU")
         val sdf = SimpleDateFormat("dd MMMM yyyy, HH:mm ",locale)
         sdf.setTimeZone(TimeZone.getTimeZone("GMT+3"))
-        val formattedDate = sdf.format(date1)
+        val formattedDate = sdf.format(date)
 
         val temp = weather.temp - 273.15
 
         val formatted = String.format("%.0f", temp)
 
-
         p0.temperatureView.text = formatted
         p0.dateTimeView.text = formattedDate.toString()
-
 
         Glide
             .with(context)

@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -102,8 +99,6 @@ class MainActivity : AppCompatActivity() {
             log("mDialog.isInitialized = false")
         }
 
-
-
         super.onSaveInstanceState(outState)
     }
 
@@ -127,7 +122,6 @@ class MainActivity : AppCompatActivity() {
             showDialog(main!!.toString(), description!!.toString(), mUrl)
 
         }
-
     }
 
 
@@ -265,6 +259,4 @@ class MainActivity : AppCompatActivity() {
     private fun log(message: String) {
         Log.d("TAG", message)
     }
-
-
 }
