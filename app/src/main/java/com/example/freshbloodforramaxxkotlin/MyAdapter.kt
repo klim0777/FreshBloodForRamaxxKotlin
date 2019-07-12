@@ -36,9 +36,9 @@ class MyAdapter(val weatherList: List<WeatherDatabaseObject>, val context: Conte
 
         val temp = weather.temp - 273.15
 
-        val formatted = String.format("%.0f", temp)
+        val formattedTemp = String.format("%.0f", temp)
 
-        p0.temperatureView.text = formatted
+        p0.temperatureView.text = formattedTemp
         p0.dateTimeView.text = formattedDate.toString()
 
         Glide
